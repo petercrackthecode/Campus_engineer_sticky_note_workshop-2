@@ -1,0 +1,42 @@
+#main {
+  /* css properties' names are usually divided by a dash */
+  text-align: center;
+  /* vw = view width. entire page = 100vw */
+  padding-left: 15vw;
+  padding-right: 15vw;
+  gap: 20px;
+}
+
+/* to choose a class, use a dot followed by the class name */
+.container {
+  padding: 15px;
+  border-radius: 20px;
+  justify-content: center;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  justify-content: center;
+}
+
+.page-divider {
+  width: 100%;
+}
+
+#editor {
+  border: 1px solid black;
+}
+
+#input {
+  border: 0;
+  width: 100%;
+  height: 95%;
+}
+
+#input:focus {
+  outline: none;
+}

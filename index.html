@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sticky Notes</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js"></script>
+  </head>
+  <body>
+    <!--id must be unique, classes can be duplicated-->
+    <div id="main" class="container col">
+      <div id="welcome-prompt" class="container">
+        <h2>What's on your mind?</h2>
+      </div>
+      <section class="row flex-center">
+        <div id="editor" class="container col inner-container">
+          <textarea name="note-input" id="input"></textarea>
+          <div id="send-note-container">
+            <button id="send-note-btn" onclick="sendNote()">Submit</button>
+          </div>
+        </div>
+      </section>
+      <hr class="page-divider" />
+      <section class="">
+        <div id="notes-group" class="">
+          <div id="notes-header" class="">
+            <h2>Note</h2>
+          </div>
+          <!-- ul == unordered list -->
+          <ul id="notes"></ul>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
