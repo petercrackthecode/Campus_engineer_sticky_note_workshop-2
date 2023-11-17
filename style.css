@@ -19,6 +19,11 @@
   flex-direction: column;
 }
 
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
 .flex-center {
   justify-content: center;
 }
@@ -37,6 +42,38 @@
   height: 95%;
 }
 
+#send-note-container {
+  text-align: right;
+}
+
+#send-note-btn {
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
 #input:focus {
   outline: none;
+}
+
+.inner-container {
+  width: 60%;
+  height: 150px;
+}
+
+#notes {
+  margin: 0;
+  padding: 0;
+}
+
+#notes-header {
+  gap: 10px;
+}
+
+/* for all the list element within notes, style them*/
+#notes > li {
+ list-style-type: none;
+ text-align: left;
+ margin-bottom: 20px;
+ border: 1px solid black;
 }

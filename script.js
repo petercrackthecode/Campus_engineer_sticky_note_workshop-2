@@ -9,6 +9,9 @@ function getRandomColor() {
   ];
 
   // return a random color from the COLORS array
+  // x * 6 | 0 <= x < 1 -> result will be y
+  // where between 0 <= y < 6
+  return COLORS[Math.floor(Math.random() * COLORS.length)];
 }
 
 function sendNote() {
@@ -23,6 +26,10 @@ function sendNote() {
 
   // li == list
   let newNote = document.createElement("li");
+  newNote.style = "height: 150px;";
+  newNote.style.backgroundColor = getRandomColor();
+  newNote.classList.add("container");
+
   newNote.innerHTML = noteContent;
   let allNotes = document.getElementById("notes");
   allNotes.appendChild(newNote);
