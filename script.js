@@ -1,3 +1,16 @@
+function getRandomColor() {
+  const COLORS = [
+    "#a2d1fc", // index: 0
+    "#ffc2cd", //        1
+    "#97aedc", //        2
+    "#d967ae", //        3
+    "#b7cf8e", //        4
+    "#d5edc2", //        5
+  ];
+
+  // return a random color from the COLORS array
+}
+
 function sendNote() {
   /*
   1. take the note from the input box
