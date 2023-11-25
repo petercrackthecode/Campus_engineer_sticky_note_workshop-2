@@ -26,7 +26,7 @@ async function sendNote() {
 
   // Make an API call to OpenAI to generate text based on the note content
   const apiKey = API_KEY; // Replace with your actual API key
-  const apiUrl = 'https://api.openai.com/v1/chat/completions';
+  const apiUrl = 'https://api.openai.com/v1/engines/gpt-3.5-turbo/completions';
 
   const headers = {
     'Content-Type': 'application/json',
