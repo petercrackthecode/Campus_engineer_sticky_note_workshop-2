@@ -25,8 +25,8 @@ async function sendNote() {
   newNote.classList.add("container");
 
   // Make an API call to OpenAI to generate text based on the note content
-  const apiKey = API_KEY; // Replace with your actual API key
-  const apiUrl = 'https://api.openai.com/v1/engines/gpt-3.5-turbo/completions';
+  const apiKey = OPENAI_KEY; // Replace with your actual API key
+  const apiUrl = 'https://api.openai.com/v1/chat/completions';
 
   const headers = {
     'Content-Type': 'application/json',
@@ -34,7 +34,8 @@ async function sendNote() {
   };
 
   const data = {
-    prompt: `${noteContent}`,
+    model: 'gpt-3.5-turbo',
+    messages: [{role: "assistant", content: `Turn this into a dad joke: ${noteContent}`}],
     max_tokens: 50,
   };
 
@@ -47,7 +48,7 @@ async function sendNote() {
 
     if (response.ok) {
       const result = await response.json();
-      const generatedText = result.choices[0].text;
+      const generatedText = result.choices[0].message.content
 
       // Display the generated text instead of the original note content
       newNote.innerHTML = generatedText;
