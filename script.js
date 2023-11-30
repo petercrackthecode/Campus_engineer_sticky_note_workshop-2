@@ -1,3 +1,11 @@
+// Make an API call to OpenAI to generate text based on the note content
+const apiKey = OpenAIApiKey; // Replace with your actual API key
+
+const headers = {
+  'Content-Type': 'application/json',
+  'Authorization': `Bearer ${apiKey}`
+};
+
 function getRandomColor() {
   const COLORS = [
     "#a2d1fc", // index: 0
@@ -15,6 +23,11 @@ function getRandomColor() {
 }
 
 async function sendNote() {
+    /*
+    1. take the note from the input box
+    2. clear the note from the input box.
+    3. add the note at the bottom of our notes list
+    */
   const inputElement = document.getElementById("input");
   const noteContent = inputElement.value;
   inputElement.value = "";
@@ -24,15 +37,6 @@ async function sendNote() {
   newNote.style.backgroundColor = getRandomColor();
   newNote.classList.add("container");
 
-  // Make an API call to OpenAI to generate text based on the note content
-  const apiKey = OPENAI_KEY; // Replace with your actual API key
-  const apiUrl = 'https://api.openai.com/v1/chat/completions';
-
-  const headers = {
-    'Content-Type': 'application/json',
-    'Authorization': `Bearer ${apiKey}`
-  };
-
   const data = {
     model: 'gpt-3.5-turbo',
     messages: [{role: "assistant", content: `Turn this into a dad joke: ${noteContent}`}],
@@ -40,7 +44,7 @@ async function sendNote() {
   };
 
   try {
-    const response = await fetch(apiUrl, {
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers,
       body: JSON.stringify(data)
